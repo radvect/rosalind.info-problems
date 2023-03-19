@@ -4,24 +4,24 @@ def factorial(a):
     else:
         a = a*factorial(a-1)
         return a
-def perm(A, a):
-    if(a==1):
-        return A;
-    else:
-        a=a-1
-        print(A)
-        print(a)
-        b = A[a]
-        print(b)
-        A.pop()
-        for i in range(0,a,1):
-            new = perm(A, a)
-            print(type(new))
-            print(new)
-            new = new.insert(i,b)
+def swap(list, i,j): #function changing elements by indexes
+    new_list = [i for i in list] #deepcopy
+    a = list[i]
+    b = list[j]
+    new_list[i]=b
+    new_list[j]=a
+    return new_list
 
-            print(new)
+def perm(A, a):
+    if(a==0):
+        print(*A, sep=" ")
+    else:
+        for i in range(0,a,1):
+            list = swap(A, i,a-1)
+            perm(list, a-1)
+
 if __name__ == '__main__':
-    #a = int(input())
-    #print(factorial(a))
-    perm([1,2,3], 3)
+    a = int(input())
+    print(factorial(a))
+    list = [i for i in range(1,a+1,1)]
+    perm(list, len(list))
