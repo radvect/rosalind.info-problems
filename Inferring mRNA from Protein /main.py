@@ -1,0 +1,3 @@
+
+
+protein = str(input())
