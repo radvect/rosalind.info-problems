@@ -1,5 +1,6 @@
 import FASTA_OPEN
-
+import Translation
+from Bio.Seq import Seq
 def comparison_sequances_for_nucleo(main, splice, index):
     if(len(splice)>len(main)-index):
         return False
@@ -29,4 +30,8 @@ if __name__ == '__main__':
             iter = 0
         i = i +1
 
-    print(DNA_spliced)
+    print(Translation.translation(DNA_spliced[:-3]))
+
+    # protein = Translation.translation(DNA_spliced)
+    #
+    # print(protein)
