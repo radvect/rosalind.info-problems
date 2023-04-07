@@ -12,11 +12,21 @@ def comparison_sequances_for_nucleo(main, splice, index):
 
 
 if __name__ == '__main__':
+    DNA_spliced = ""
     fasta_list=FASTA_OPEN.open_fasta_as_list("DNA.fasta")
     main_seq = fasta_list[0]
-    for i in range(len(main_seq)):
+    i = 0
+    while (i<len(main_seq)):
+        iter =0
         for j in range(1,len(fasta_list)):
             if(comparison_sequances_for_nucleo(main_seq,fasta_list[j], i)):
-                main_seq = main_seq[:i]
-                i =0
-    print(main_seq)
+                l = len(fasta_list[j])
+                i = i+l-1
+                iter=1
+                break
+        if(iter==0):
+            DNA_spliced+=main_seq[i]
+            iter = 0
+        i = i +1
+
+    print(DNA_spliced)
