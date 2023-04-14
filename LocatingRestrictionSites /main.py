@@ -1,8 +1,4 @@
-import sys
-import copy
-
 import FASTA_OPEN
-import TranscribingDNAintoRNA.main
 from TranscribingDNAintoRNA import main
 
 def reversePalindrom(s):
@@ -14,8 +10,6 @@ def reversePalindrom(s):
         return False
 
 def LocationRestrictionSites(s):
-    print(s)
-
     i = 0
     while(i<len(s)):
         lim = 12
