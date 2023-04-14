@@ -2,10 +2,7 @@ import sys
 
 
 import FASTA_OPEN
-sys.path.append( '/TranscribingDNAintoRNA' )
-for p in sys.path:
-    print( p )
-import main
+from TranscribingDNAintoRNA import main
 def LocationRestrictionSites(s):
     a = ""
     a = main.Transcription(s)
@@ -28,6 +25,7 @@ def LocationRestrictionSites(s):
                 d[indexofpal] = l
 
         else:
+
             i = i+1
     print(d)
 
